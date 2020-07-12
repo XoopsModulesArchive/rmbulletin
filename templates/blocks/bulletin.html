@@ -1,0 +1,12 @@
+<div style="padding: 4px; margin-bottom: 10px;">
+<div style="font-size: 10px; margin-bottom: 10px;">
+	<{$block.msg}>
+</div>
+<form name="frmsuscribe" action="<{$block.formurl}>" method='post'>
+	<div style="font-weight: bold; padding: 4px; margin-bottom: 5px;"><{$block.lang_yourmail}></div>
+	<div style="margin-bottom: 3px;"><input type="text" name="email" size="20" /></div>
+	<div style="margin-bottom: 3px;"><input type="submit" name="sbt" value="<{$block.lang_submit}>" class='formButton'></div>
+	<br /><a href="<{$xoops_url}>/modules/rmbulletin/"><{$block.lang_archive}></a><br />
+</form>
+
+</div>

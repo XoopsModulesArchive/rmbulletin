@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<style type="text/css">
+<!--
+	body{
+		background-color: #FF3300;
+		margin: 0px;
+		font-size: 11px;
+		font-family: Arial, Helvetica, sans-serif;
+		color: #333333;
+	}
+	a{
+		color: #000000;
+		text-decoration: underline;
+	}
+	a:hover{
+		color: #FF4500;
+		text-decoration: none;
+	}
+	h1{
+		font-size: 24px;
+		font-family: Arial, Helvetica, sans-serif;
+		margin: 0;
+		padding: 0;
+		color: #6D120D;
+	}
+	h4{
+		font-size: 14px;
+		font-weight: bold;
+		padding:0;
+		margin: 0;
+		color: #6D120D;
+	}
+	.main{
+		background: #FFFFFF url(<{$theme_url}>/images/bg.jpg) repeat-y;
+		width: 600px;
+	}
+	
+	.header{
+		background: url(<{$theme_url}>/images/top.jpg) no-repeat;
+		height: 113px;
+		padding: 0px;
+		padding-left: 100px;
+	}
+	.content{
+		padding: 6px 6px 6px 24px;
+		vertical-align: top;
+	}
+	.subindices{
+		padding-left: 20px;
+	}
+	.sectiontitle{
+		padding: 6px;
+		font-size: 18px;
+		font-weight: bold;
+		border-bottom: 1px solid #CCCCCC;
+	}
+	.itemtitle{
+		font-size: 14px;
+		font-weight: bold;
+	}
+	.items{
+		padding: 4px;
+	}
+	.items img{ margin: 3px; }
+	.footer{
+		text-align: center;
+		background: #FF3300 url(<{$theme_url}>/images/bottom.jpg) no-repeat top;
+		padding: 15px;
+		color: #FFCC00;
+	}
+	.footer a{
+		color: #FFFFFF;
+		font-weight: bold;
+	}
+	.url{
+		padding: 2px;
+		text-align: right;
+		border-top: 2px solid #FF3300;
+		width: 480px;
+	}
+	.extra{
+		font-style: italic;
+		color: #990000;
+	}
+-->
+</style>
+</head>
+
+<body>
+<table class="main" cellspacing="0" cellpadding="0" border="0" align="center" width="700">
+	<tr>
+		<td class="header"><h1><{$sitename}></h1><h4><{$siteslogan}></h6>
+		<div class="url"><{$site_url|replace:"http://":""}></div></td>
+	</tr>
+	<tr>
+	  <td class="content">
+		<{$intro}>	  </td>
+  </tr>
+	<tr>
+	  <td class="content">
+	  <table width="80%" align="center" cellspacing="2" cellpadding="4">
+	  <tr><td>
+	  <strong style="font-size: 18px;">Indice</strong><br /><br />
+		<{assign var="i" value=0}>
+		<{foreach item=section from=$sections}>
+			<strong><{$section.title}></strong><br /><br />
+			<div class="subindices">
+			<{foreach item=item from=$section.items}>
+				<a href="#<{$i}>"><{$item.title}></a><br />
+				<{assign var="i" value=$i+1}>
+			<{/foreach}>			</div><br /><br />
+		<{/foreach}>
+		</td></tr></table>	  </td>
+  </tr>
+	<tr>
+	  <td class="content">
+	  <table width="100%" cellspacing="0" cellpadding="0" border="0">
+		<{assign var="i" value=0}>
+		<{foreach item=section from=$sections}>
+			<tr><td align="left" class="sectiontitle">
+				<img src="<{$theme_url}>/images/section.png" align="absmiddle" /> <{$section.title}>
+			</td></tr>
+			<tr><td>&nbsp;</td></tr>
+			<{foreach item=item from=$section.items}>
+			<tr><td align="left" class="items">
+			<span class="itemtitle">
+				<img src="<{$theme_url}>/images/item.png" align="absmiddle" />  <a name="<{$i}>"></a><a href="<{$item.link}>" target='_blank'><{$item.title}></a></span><br />
+			<{if $item.text!=''}>
+				<br />
+				<div class="itemcontent">
+					<{$item.text}>			
+				</div>
+				<span class="extra"><{$item.extra}></span><br /><br />
+			<{/if}>
+			</td></tr>
+			<{assign var="i" value=$i+1}>
+			<{/foreach}>
+		<{/foreach}>
+		</table>	  </td>
+  </tr>
+	<tr>
+	  <td class="content">&nbsp;</td>
+  </tr>
+	<tr>
+	  <td class="footer"><{$unsuscribe}><br />
+</td>
+  </tr>
+</table>
+</body>
+</html>

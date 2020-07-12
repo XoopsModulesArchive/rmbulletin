@@ -1,0 +1,15 @@
+RMSOFT Bulletin 1.0
+Módulo para el control y envío de boletines informativos
+Copyright (c) Red México Soft
+========================================================
+
+¡¡¡ IMPORTANTE !!!
+---------------------
+
+Para poder ejecutar RMSOFT Bulletin debes contar con los siguientes
+requerimientos:
+
+- PHP5
+- MySQL 4.x o Superior
+- RMSOFT Common Utilities 1.2
+

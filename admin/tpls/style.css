@@ -1,0 +1,50 @@
+/* CSS Document */
+
+table.rmbNav{
+	height: 40px;
+	font-family: "Trebuchet MS", Arial, helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	border: 0;
+}
+table.rmbNav td.rmbNavItem{
+	vertical-align: middle;
+	text-align: center;
+	background: url(../../images/navbg.png) repeat-x;
+	padding: 0px;
+}
+td.rmbNavItem a{
+	padding: 3px 10px 3px 28px;
+	display: block;
+	background: no-repeat left;
+	color: #FF6600;
+	margin-right: 10px;
+}
+td.rmbNavItem a:hover{
+	color: #004E99;
+	padding: 4px 10px 2px 28px;
+}
+table.aboutTable{
+	border: 1px solid #FF9900;
+	width: 500px;
+	margin: 0 auto;
+}
+table.aboutTable td.aboutleft{
+	width: 110px;
+	border-right: 1px solid #FFCC00;
+	background-color: #FFF3C6;
+	vertical-align: top;
+	text-align: center;
+	padding: 4px;
+}
+table.aboutTable td.aboutright{
+	padding: 4px;
+	vertical-align: top;
+	background-color: #FFFFFF;
+	line-height: 150%;
+}
+td.aboutright .rmbname{
+	font-size: 18px;
+	font-weight: bold;
+	color: #000000;
+}

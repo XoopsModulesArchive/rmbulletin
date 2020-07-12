@@ -1,0 +1,49 @@
+<{$message}>
+
+<br /><br />
+
+<table class="outer" cellspacing="1" cellpadding="0" width="100%">
+
+	<tr><th colspan="4"><{$boletins_title}></th></tr>
+
+	<tr class="head" align="center">
+
+		<td>&nbsp;</td>
+
+		<td><{$lang_title}></td>
+
+		<td><{$lang_fecha}></td>
+
+		<td><{$lang_intro}></td>
+
+	</tr>
+
+	<{assign var="i" value=1}>
+
+	<{foreach item=bol from=$boletines}>
+
+		<tr class="<{cycle values="even,odd"}>">
+
+			<td align="right" valign="top"><strong><{$i}>.</strong></td>
+
+			<td align="left" valign="top"><strong><a href="view.php?id=<{$bol.link}>" target="_blank"><{$bol.titulo}></a></strong></td>
+
+			<td align="center"><{$bol.fecha}></td>
+
+			<td align="left"><{$bol.intro}></td>
+
+		</tr>
+
+		<{assign var="i" value=$i+1}>
+
+	<{/foreach}>
+
+</table><br /><br />
+
+<!-- Please, do not remove next lines. Help us to create new modules -->
+
+<div class="foot" align="center">
+
+	<{$footer}>
+
+</div>

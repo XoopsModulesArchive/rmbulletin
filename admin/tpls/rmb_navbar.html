@@ -1,0 +1,11 @@
+<link href="<{$rmb_url}>/admin/tpls/style.css" rel="stylesheet" type="text/css">
+<table border="0" cellspacing="0" cellpadding="0" align="center" class="rmbNav">
+  <tr>
+    <td><img src="<{$rmb_url}>/images/navleft.png" width="13" height="40" /></td>
+	<{foreach item=item from=$navItems}>
+    <td class="rmbNavItem"><a href="<{$item.link}>" title="<{$item.text}>" style="background-image: url(<{$item.img}>);"><{$item.text}></a></td>
+	<{/foreach}>
+    <td><img src="<{$rmb_url}>/images/navright.png" width="10" height="40" /></td>
+  </tr>
+</table>
+<br />
